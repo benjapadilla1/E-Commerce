@@ -1,0 +1,14 @@
+body {
+    background-color: rgb(7, 219, 166);
+}
+
+.NavBar {
+    display: flex;
+    justify-content: space-around;
+}
+
+.nombreprompt {
+    font-size: x-large;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 50px;
+}
