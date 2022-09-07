@@ -1,5 +1,11 @@
 body {
     background-color: rgb(7, 219, 166);
+
+}
+
+.botones {
+    display: flex;
+    justify-content: center;
 }
 
 .NavBar {

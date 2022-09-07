@@ -1,6 +1,7 @@
 
 import NavBar from "./components/NavBar";
 import Item from "./components/ItemListContainer"
+import Cuenta from "./components/ItemCount"
 const App = () => {
   return (
     <div>
@@ -8,7 +9,10 @@ const App = () => {
       <div>
       </div>
       <Item />
+      <>  <Cuenta /></>
+
     </div>
+
   );
 }
 
