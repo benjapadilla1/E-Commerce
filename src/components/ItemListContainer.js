@@ -1,10 +1,9 @@
 import React from 'react'
-
-const ItemListContainer = (nombre) => {
-    nombre = prompt("por favor ingrese su nombre")
+import ListaItems from "./ItemList"
+const ItemListContainer = () => {
     return (
-        <div className='nombreprompt'>
-            Buenos dias {nombre}
+        <div>
+            <ListaItems />
         </div>
     )
 }

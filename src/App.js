@@ -1,15 +1,13 @@
 
 import NavBar from "./components/NavBar";
-import Item from "./components/ItemListContainer"
-import Cuenta from "./components/ItemCount"
+import ItemListContainer from "./components/ItemListContainer"
 const App = () => {
   return (
     <div>
       <NavBar />
       <div>
       </div>
-      <Item />
-      <>  <Cuenta /></>
+      <ItemListContainer />
 
     </div>
 
