@@ -3,34 +3,18 @@ body {
 
 }
 
-.botones {
-    display: flex;
-    justify-content: center;
-}
-
-.padre-productos {
-    margin: 50px;
-    display: flex;
-    justify-content: space-around;
-}
-
 .NavBar {
     display: flex;
     justify-content: space-around;
 }
 
-.fotovalija {
-    max-width: 300px;
+.padre-productos {
+    height: 450px;
+    font-size: larger;
+    display: flex;
+    justify-content: space-around;
 }
 
-.estilo_compra {
-    margin: 0 auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: larger;
-    width: 200px;
-    height: 75px;
-    border-radius: 10px;
-    background-color: burlywood;
+.foto {
+    max-width: 300px;
 }

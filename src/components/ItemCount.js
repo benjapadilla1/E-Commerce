@@ -1,23 +1,21 @@
 import React from 'react'
 import { useState } from 'react'
-
-
-const ItemCount = ({ stock = 5, cuentaInicial = 0, onAdd }) => {
-    const [contador, setContador] = useState(cuentaInicial)
-    if (contador > 5) {
-        setContador(cuentaInicial)
-    } else if (contador < 0) {
-        setContador(cuentaInicial)
+import Button from 'react-bootstrap/Button';
+const ItemCount = ({ stock = 5, Inicial = 0, onAdd }) => {
+    const [c, setC] = useState(Inicial)
+    if (c > 5) {
+        setC(Inicial)
+    } else if (c < 0) {
+        setC(Inicial)
     }
-
     return (
-        <div class="botones">
+        <div>
             Stock: {stock}
-            <button onClick={() => setContador(cuentaInicial)} >Resetear</button>
-            <button onClick={() => setContador(contador - 1)} > - </button>
-            {contador}
-            <button onClick={() => setContador(contador + 1)}> + </button>
-            <button onClick={() => onAdd(contador)} >Agregar al Carrito</button>
+            <button onClick={() => setC(Inicial)} >Reset</button>
+            <button onClick={() => setC(c - 1)} > - </button>
+            {c}
+            <button onClick={() => setC(c + 1)}> + </button>
+            <Button onClick={() => onAdd(c)} >Agregar al Carrito</Button>
         </div>
     )
 }
