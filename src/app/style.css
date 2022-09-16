@@ -1,6 +1,6 @@
-body {
-    background-color: rgb(7, 219, 166);
-
+html,
+.NavBar {
+    background: rgb(7, 219, 166);
 }
 
 .NavBar {
@@ -8,11 +8,14 @@ body {
     justify-content: space-around;
 }
 
-.padre-productos {
-    height: 450px;
-    font-size: larger;
+.Card {
     display: flex;
-    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+}
+
+.carrito {
+    max-width: 100px;
 }
 
 .foto {

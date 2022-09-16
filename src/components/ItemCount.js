@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState } from 'react'
-import Button from 'react-bootstrap/Button';
+
 const ItemCount = ({ stock = 5, Inicial = 0, onAdd }) => {
     const [c, setC] = useState(Inicial)
     if (c > 5) {
@@ -11,13 +11,12 @@ const ItemCount = ({ stock = 5, Inicial = 0, onAdd }) => {
     return (
         <div>
             Stock: {stock}
-            <button onClick={() => setC(Inicial)} >Reset</button>
+            <button onClick={() => setC(Inicial)} className="btn btn-danger">Reset</button>
             <button onClick={() => setC(c - 1)} > - </button>
             {c}
             <button onClick={() => setC(c + 1)}> + </button>
-            <Button onClick={() => onAdd(c)} >Agregar al Carrito</Button>
-        </div>
+            <button className="btn btn-success" onClick={() => onAdd(c)} >Agregar al Carrito</button>
+        </div >
     )
 }
-
 export default ItemCount

@@ -1,26 +1,15 @@
 import React from 'react'
 import Cuenta from "./ItemCount"
-import ItemListContainer from './ItemListContainer'
-const Item = () => {
+
+
+const Item = (props) => {
     return (
-        <div className='padre-productos'>
-            {productos.map((producto, i) =>
-                <div key={i}  >
-                    <div id={producto.id} >
-                        <div>
-                            <div>
-                                <p> {producto.title}</p>
-                            </div>
-                            <div>
-                                <img className='foto' src={producto.imagen} ></img>
-                            </div>
-                            <div>
-                                <Cuenta />
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            )}
+        <div className='Card'>
+            <h4>{props.title}</h4>
+            <img src={props.image} className="foto" alt='Item' />
+            <p>Precio: ${props.price}</p>
+            <button className='btn btn-secondary'>Detalles del producto</button>
+            <Cuenta />
         </div>
     )
 }
