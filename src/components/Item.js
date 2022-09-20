@@ -1,15 +1,16 @@
 import React from 'react'
-import Cuenta from "./ItemCount"
-
+import { Link } from 'react-router-dom'
 
 const Item = (props) => {
     return (
         <div className='Card'>
-            <h4>{props.title}</h4>
+            <h4 className='card-tilte'>{props.title}</h4>
             <img src={props.image} className="foto" alt='Item' />
-            <p>Precio: ${props.price}</p>
-            <button className='btn btn-secondary'>Detalles del producto</button>
-            <Cuenta />
+            <Link to={`/Item/${props.id}`} >
+                <button className="btn btn-dark">
+                    Ver detalles del producto
+                </button>
+            </Link>
         </div>
     )
 }

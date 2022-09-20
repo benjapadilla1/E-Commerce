@@ -1,11 +1,9 @@
-import NavBar from "./components/NavBar";
 import "./app/style.css"
-import ItemListContainer from "./components/ItemListContainer";
+import Router from "./app/Router";
 const App = () => {
   return (
     <>
-      <NavBar />
-      <ItemListContainer />
+      <Router />
     </>
   );
 }

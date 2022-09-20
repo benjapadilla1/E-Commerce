@@ -1,8 +1,3 @@
-html,
-.NavBar {
-    background: rgb(7, 219, 166);
-}
-
 .NavBar {
     display: flex;
     justify-content: space-around;
@@ -14,7 +9,8 @@ html,
     align-items: center;
 }
 
-.carrito {
+.carrito,
+.necy {
     max-width: 100px;
 }
 
