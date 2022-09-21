@@ -3,17 +3,18 @@ import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import Productos from "../Productos"
 import ItemDetail from './ItemDetail';
+
 const ItemDetailContainer = () => {
+    const { itemId } = useParams()
     const [details, setDetails] = useState([])
-    const { detalleId } = useParams()
     useEffect(() => {
-        const getItem = () => new Promise((resolve, reject) => {
-            setTimeout(() => {
-                resolve(Productos);
-            },)
-        });
-        getItem().then(res => setDetails(res.find(Productos => Productos.id === parseInt(detalleId))))
-    }, [detalleId])
+        getItem().then(res => setDetails(res.find((Productos) => Number(Productos.id) === Number(itemId))))
+    }, [itemId])
+    const getItem = () => new Promise((res, rej) => {
+        setTimeout(() =>
+            res(Productos),
+            2000)
+    });
     return (
         <div><ItemDetail details={details} /></div>
     )

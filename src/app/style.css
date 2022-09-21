@@ -3,6 +3,11 @@
     justify-content: space-around;
 }
 
+.link {
+    text-decoration: none;
+    color: black;
+}
+
 .Card {
     display: flex;
     flex-direction: column;

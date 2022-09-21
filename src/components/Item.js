@@ -6,7 +6,7 @@ const Item = (props) => {
         <div className='Card'>
             <h4 className='card-tilte'>{props.title}</h4>
             <img src={props.image} className="foto" alt='Item' />
-            <Link to={`/Item/${props.id}`} >
+            <Link to={`/Item/${props.title}`} >
                 <button className="btn btn-dark">
                     Ver detalles del producto
                 </button>
