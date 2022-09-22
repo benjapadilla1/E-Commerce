@@ -4,7 +4,7 @@ import set from "./assets/setvalijaamayra.jpg"
 import valija from "./assets/valijaamayra.jpg"
 
 
-const productos = () => [
+const productos = [
     {
         id: 1,
         title: "Cartuchera Amayra",

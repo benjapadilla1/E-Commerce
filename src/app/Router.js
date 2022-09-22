@@ -12,7 +12,7 @@ const Router = () => {
                     <Route element={<Layout />}>
                         <Route path="/" index element={<ItemListContainer />} />
                         <Route path="/category/:categoryId" element={<ItemListContainer />} />
-                        <Route path="/item/:itemId" element={<ItemDetailContainer />} />
+                        <Route path="/item/:Id" element={<ItemDetailContainer />} />
                         <Route path="/cart/" element={<CartWidget />} />
                     </Route>
                 </Routes>
