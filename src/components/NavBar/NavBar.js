@@ -1,6 +1,5 @@
-import foto from "../assets/necy.png"
-import "../app/style.css"
-import CartWidget from "./CartWidget"
+import foto from "../../assets/necy.png"
+import CartWidget from "../CartWidget"
 import { NavLink } from "react-router-dom"
 const NavBar = () => {
     return (

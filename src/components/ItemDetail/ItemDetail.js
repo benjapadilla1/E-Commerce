@@ -1,9 +1,9 @@
 import React from 'react'
-import Cuenta from "./ItemCount"
+import Cuenta from "../ItemCount"
 import { Link } from 'react-router-dom'
 import { useState } from 'react'
 
-const ItemDetail = ({ props }) => {
+const ItemDetail = ({ details }) => {
     const [carrito, setCarrito] = useState(false)
     const onAdd = (q) => {
         setCarrito(true)
@@ -12,10 +12,10 @@ const ItemDetail = ({ props }) => {
     return (
         <>
             <div className='Card'>
-                <h4 className='card-tilte'>{props.title}</h4>
-                <img src={props.image} className="foto" alt='Item' />
-                <p>Precio: ${props.price}</p>
-                <p>Medidas: {props.medidas}</p>
+                <h4 className='card-tilte' >{details.title}</h4>
+                <img src={details.image} className="foto" alt='Item' />
+                <p>Precio: ${details.price}</p>
+                <p>Medidas: {details.medidas}</p>
                 {
                     carrito
                         ? <Link to="/cart">Terminar compra</Link>
@@ -30,5 +30,4 @@ const ItemDetail = ({ props }) => {
         </>
     )
 }
-
 export default ItemDetail
