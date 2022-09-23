@@ -1,5 +1,5 @@
 import foto from "../../assets/necy.png"
-import CartWidget from "../CartWidget"
+import fotocarrito from "../../assets/carrito.png"
 import { NavLink } from "react-router-dom"
 const NavBar = () => {
     return (
@@ -16,7 +16,9 @@ const NavBar = () => {
                     <NavLink to="/ubicacion" >Donde estamos </NavLink>
                 </li>
             </ul>
-            <CartWidget />
+            <NavLink to={"/cart/"}>
+                <img className="carrito" src={fotocarrito} alt="" />
+            </NavLink>
         </div>
     )
 }

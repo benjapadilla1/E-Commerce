@@ -2,8 +2,10 @@ import React from 'react'
 import Cuenta from "../ItemCount"
 import { Link } from 'react-router-dom'
 import { useState } from 'react'
-
+import { CartContext } from "../Cart/CartContext"
+import { useContext } from 'react'
 const ItemDetail = ({ details }) => {
+    const { agregarAlCarrito } = useContext(CartContext)
     const [carrito, setCarrito] = useState(false)
     const onAdd = (q) => {
         setCarrito(true)
@@ -27,6 +29,7 @@ const ItemDetail = ({ details }) => {
                     Volver
                 </button>
             </Link>
+            <button className="btn btn-dark" onClick={() => agregarAlCarrito(carrito)}>Agregar al Carrito</button>
         </>
     )
 }

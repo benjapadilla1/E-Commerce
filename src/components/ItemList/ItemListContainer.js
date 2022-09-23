@@ -15,7 +15,7 @@ const ItemListContainer = () => {
         });
     }, []);
     return (
-        <div><ItemList props={items} /></div>
+        <><ItemList props={items} /></>
     )
 }
 export default ItemListContainer
