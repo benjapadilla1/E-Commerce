@@ -1,22 +1,22 @@
 import React from 'react'
-import { CartContext } from "./CartContext"
-import { useContext } from 'react'
+import { useCartContext } from './CartContext'
 
 const CartWidget = () => {
-    const { carrito } = useContext(CartContext)
-    if (carrito.length === 0) {
-        return (
-            <>
-                <p>No hay elementos en el carrito</p>
-            </>
-        )
-    }
+    const { carrito, eliminarProducto, limpiarCarrito } = useCartContext()
     return (
-        <div>
-            <h3 className="text-center">
-                Carrito de compras:
-            </h3>
-        </div>
+        <>
+            {carrito.length > 0
+                ? carrito.map(item =>
+                    <div>
+                        <h2 className='text-center'>{item.title} </h2>
+                        <img src={item.image} className="foto" />
+                        <button onClick={eliminarProducto} className='btn btn-danger'>Eliminar Producto </button>
+                        <button onClick={limpiarCarrito} className="btn btn-danger">Limpiar Carrito</button>
+                    </div>
+                )
+                : "No hay productos en el carrito"
+            }
+        </>
     )
 }
 

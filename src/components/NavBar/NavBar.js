@@ -16,10 +16,13 @@ const NavBar = () => {
                     <NavLink to="/ubicacion" >Donde estamos </NavLink>
                 </li>
             </ul>
-            <NavLink to={"/cart/"}>
+            <NavLink to={"/cart"}>
                 <img className="carrito" src={fotocarrito} alt="" />
+                <svg className="circulo">
+                    <circle />
+                </svg>
             </NavLink>
-        </div>
+        </div >
     )
 }
 export default NavBar;

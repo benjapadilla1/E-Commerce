@@ -4,20 +4,21 @@ import Layout from './Layout';
 import ItemListContainer from '../components/ItemList/ItemListContainer';
 import ItemDetailContainer from '../components/ItemDetail/ItemDetailContainer';
 import CartWidget from "../components/Cart/CartWidget";
-import { CartProvider } from "../components/Cart/CartContext"
-
+import { CartProvider } from '../components/Cart/CartContext';
 const Router = () => {
     return (
         <>
-            <BrowserRouter>
-                <Routes >
-                    <Route element={<Layout />}>
-                        <Route path="/" index element={<ItemListContainer />} />
-                        <Route path="/item/:itemId" element={<ItemDetailContainer />} />
-                        <Route path="/cart/" element={<CartWidget />} />
-                    </Route>
-                </Routes>
-            </BrowserRouter>
+            <CartProvider>
+                <BrowserRouter>
+                    <Routes >
+                        <Route element={<Layout />}>
+                            <Route path="/" index element={<ItemListContainer />} />
+                            <Route path="/item/:itemId" element={<ItemDetailContainer />} />
+                            <Route path="/cart" element={<CartWidget />} />
+                        </Route>
+                    </Routes>
+                </BrowserRouter>
+            </CartProvider>
         </>
     )
 }

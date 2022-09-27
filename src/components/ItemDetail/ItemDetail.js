@@ -1,14 +1,13 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Cuenta from "../ItemCount"
 import { Link } from 'react-router-dom'
-import { useState } from 'react'
-import { CartContext } from "../Cart/CartContext"
-import { useContext } from 'react'
+import { useCartContext } from '../Cart/CartContext'
 const ItemDetail = ({ details }) => {
-    const { agregarAlCarrito } = useContext(CartContext)
-    const [carrito, setCarrito] = useState(false)
+    const [cuenta, setCuenta] = useState(false)
+    const { agregarAlCarrito } = useCartContext()
     const onAdd = (q) => {
-        setCarrito(true)
+        setCuenta(true)
+        agregarAlCarrito(details, q)
         console.log(`Añadiste ${q} cantidades al carrito`)
     }
     return (
@@ -19,7 +18,7 @@ const ItemDetail = ({ details }) => {
                 <p>Precio: ${details.price}</p>
                 <p>Medidas: {details.medidas}</p>
                 {
-                    carrito
+                    cuenta
                         ? <Link to="/cart">Terminar compra</Link>
                         : <Cuenta stock={5} onAdd={onAdd} />
                 }
@@ -29,7 +28,6 @@ const ItemDetail = ({ details }) => {
                     Volver
                 </button>
             </Link>
-            <button className="btn btn-dark" onClick={() => agregarAlCarrito(carrito)}>Agregar al Carrito</button>
         </>
     )
 }
