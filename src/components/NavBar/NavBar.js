@@ -1,6 +1,7 @@
 import foto from "../../assets/necy.png"
 import fotocarrito from "../../assets/carrito.png"
 import { NavLink } from "react-router-dom"
+import CartWidget from "../Cart/CartWidget"
 const NavBar = () => {
     return (
         <div className="NavBar">
@@ -18,9 +19,9 @@ const NavBar = () => {
             </ul>
             <NavLink to={"/cart"}>
                 <img className="carrito" src={fotocarrito} alt="" />
-                <svg className="circulo">
-                    <circle />
-                </svg>
+                <div className="contador">
+                    <CartWidget />
+                </div>
             </NavLink>
         </div >
     )

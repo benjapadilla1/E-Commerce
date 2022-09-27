@@ -5,10 +5,10 @@ import { useCartContext } from '../Cart/CartContext'
 const ItemDetail = ({ details }) => {
     const [cuenta, setCuenta] = useState(false)
     const { agregarAlCarrito } = useCartContext()
-    const onAdd = (q) => {
+    const onAdd = (cantidad) => {
         setCuenta(true)
-        agregarAlCarrito(details, q)
-        console.log(`Añadiste ${q} cantidades al carrito`)
+        agregarAlCarrito(details, cantidad)
+        console.log(`Añadiste ${cantidad} cantidades al carrito`)
     }
     return (
         <>
@@ -20,7 +20,7 @@ const ItemDetail = ({ details }) => {
                 {
                     cuenta
                         ? <Link to="/cart">Terminar compra</Link>
-                        : <Cuenta stock={5} onAdd={onAdd} />
+                        : <Cuenta initial={3} stock={5} onAdd={onAdd} />
                 }
             </div>
             <Link to={`/`} >
