@@ -1,9 +1,9 @@
 import React from 'react';
 import Item from './Item';
-const ItemList = ({ props }) => {
+const ItemList = ({ items }) => {
     return (
         <>
-            {props.map((item) => {
+            {items.map((item) => {
                 return <Item
                     key={item.id}
                     image={item.image}

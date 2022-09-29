@@ -1,19 +1,17 @@
 import React from 'react'
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import productos from "../../Productos"
 import ItemDetail from './ItemDetail';
-
+import { getFirestore, doc, getDoc } from "firebase/firestore"
 const ItemDetailContainer = () => {
     const [details, setDetails] = useState([]);
     const { itemId } = useParams();
     useEffect(() => {
-        const getDetails = new Promise((resolve, reject) => {
-            setTimeout(() => {
-                resolve(productos);
-            }, 2000)
-        });
-        getDetails.then(res => setDetails(res.find(productos => Number(productos.id) === Number(itemId))));
+        // pedido para recuperar Item
+        const recuperarItem = getFirestore()
+        const recuperarDoc = doc(recuperarItem, "productos", itemId)
+        getDoc(recuperarDoc)
+            .then(res => setDetails({ id: res.id, ...res.data() }))
     }, [itemId]);
     return (
         <div>
@@ -21,4 +19,21 @@ const ItemDetailContainer = () => {
         </div>
     )
 }
+// const ItemDetailContainer = () => {
+//     const [details, setDetails] = useState([]);
+//     const { itemId } = useParams();
+//     useEffect(() => {
+//         const getDetails = new Promise((resolve, reject) => {
+//             setTimeout(() => {
+//                 resolve(productos);
+//             }, 2000)
+//         });
+//         getDetails.then(res => setDetails(res.find(productos => Number(productos.id) === Number(itemId))));
+//     }, [itemId]);
+//     return (
+//         <div>
+//             <ItemDetail details={details} />
+//         </div>
+//     )
+// }
 export default ItemDetailContainer

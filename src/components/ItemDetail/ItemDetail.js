@@ -12,7 +12,7 @@ const ItemDetail = ({ details }) => {
     }
     return (
         <>
-            <div className='Card'>
+            <div className='card'>
                 <h4 className='card-tilte' >{details.title}</h4>
                 <img src={details.image} className="foto" alt='Item' />
                 <p>Precio: ${details.price}</p>

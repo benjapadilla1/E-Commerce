@@ -6,8 +6,8 @@ const ItemCart = ({ producto }) => {
         <>
             <h2 className='text-center'>{producto.title} </h2>
             <img src={producto.image} className="rounded mx-auto d-block" alt='' style={{ width: "400px" }} />
-            <p>Cantidad: {producto.cantidad}</p>
-            <p>Subtotal: ${producto.price * producto.cantidad} </p>
+            <p className='text-center'>Cantidad: {producto.cantidad}</p>
+            <p className='text-center' style={{ color: "green" }}>Subtotal: ${producto.price * producto.cantidad} </p>
             <button onClick={() => eliminarProducto(producto.id)} className='btn btn-danger' >Eliminar Producto </button>
         </>
     )

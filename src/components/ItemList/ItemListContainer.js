@@ -1,21 +1,17 @@
 import React from 'react'
 import { useState, useEffect } from 'react';
-import productos from "../../Productos"
 import ItemList from './ItemList';
+import { getFirestore, collection, getDocs } from "firebase/firestore"
 const ItemListContainer = () => {
     const [items, setItem] = useState([])
     useEffect(() => {
-        const task = new Promise((resolve, reject) => {
-            setTimeout(() => {
-                resolve(productos);
-            }, 2000)
-        });
-        task.then((res) => {
-            setItem(res)
-        });
+        const recuperarItem = getFirestore()
+        const recuperarCollection = collection(recuperarItem, "productos")
+        getDocs(recuperarCollection)
+            .then(res => setItem(res.docs.map(producto => ({ id: producto.id, ...producto.data() }))))
     }, []);
     return (
-        <><ItemList props={items} /></>
+        <><ItemList items={items} /></>
     )
 }
 export default ItemListContainer
