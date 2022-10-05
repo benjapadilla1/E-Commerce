@@ -6,10 +6,10 @@ const Cart = () => {
     const { carrito, precioTotal, limpiarCarrito } = useCartContext()
     if (carrito.length === 0) {
         return (
-            <>
+            <div className="text-center">
                 <p>"No hay elementos en el carrito"</p>
                 < Link to="/" > Hacer compras</Link>
-            </>
+            </div>
         )
     }
     return (
@@ -17,12 +17,19 @@ const Cart = () => {
             {
                 carrito.map(producto => <ItemCart key={producto.id} producto={producto} cantidad={producto.cantidad} />)
             }
-            <div className='d-flex justify-content-end'>
-                <button onClick={limpiarCarrito} className="btn btn-danger" >Limpiar Carrito</button>
-            </div>
+            {/* <div className='d-flex justify-content-end'>
+                <button onClick={limpiarCarrito} className="btn btn-warning" >Limpiar Carrito</button>
+            </div> */}
             <h4 className='text-center'>
                 Total de la compra: ${precioTotal()}
             </h4>
+            <div className='d-flex justify-content-center'>
+                <Link to={"/Formulario"}>
+                    <button className='btn btn-info'>Terminar compra</button>
+                </Link>
+                <button onClick={limpiarCarrito} className="btn btn-warning" >Limpiar Carrito</button>
+            </div>
+
         </>
     )
 }

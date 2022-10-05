@@ -1,10 +1,11 @@
 import React from 'react'
 import { useState } from 'react'
-const ItemCount = ({ stock = 5, Inicial = 0, onAdd }) => {
+const ItemCount = ({ stock, Inicial = 0, onAdd }) => {
     const [cantidad, setCantidad] = useState(Inicial)
-    if (cantidad > 5) {
+    if (cantidad > stock) {
         setCantidad(Inicial)
-    } else if (cantidad < 0) {
+    }
+    else if (cantidad < 0) {
         setCantidad(Inicial)
     }
     return (

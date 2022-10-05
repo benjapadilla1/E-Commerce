@@ -8,7 +8,9 @@ const ItemCart = ({ producto }) => {
             <img src={producto.image} className="rounded mx-auto d-block" alt='' style={{ width: "400px" }} />
             <p className='text-center'>Cantidad: {producto.cantidad}</p>
             <p className='text-center' style={{ color: "green" }}>Subtotal: ${producto.price * producto.cantidad} </p>
-            <button onClick={() => eliminarProducto(producto.id)} className='btn btn-danger' >Eliminar Producto </button>
+            <div className='d-flex justify-content-center'>
+                <button onClick={() => eliminarProducto(producto.id)} className='btn btn-danger' >Eliminar Producto </button>
+            </div>
         </>
     )
 }

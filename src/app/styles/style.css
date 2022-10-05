@@ -1,12 +1,13 @@
-.NavBar {
-    display: flex;
-    justify-content: space-around;
-}
-
 .link {
     text-decoration: none;
     color: black;
 }
+
+.items {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+}
+
 
 .card {
     display: flex;
@@ -15,26 +16,21 @@
     justify-content: center;
 }
 
+/* Animacion CARD */
+.cardImg {
+    box-sizing: border-box;
+    transition: 400ms;
+}
+
+.cardImg:hover {
+    transform: translateY(-30px);
+    transform: translate(-10px, -10px) rotate(-15deg) scale(1.4);
+}
 
 .carrito,
 .necy {
     max-width: 100px;
 }
-
-.contador {
-    color: black;
-    text-decoration: none;
-    float: right;
-    width: 25px;
-    height: 30px;
-    background: rgb(156, 7, 7);
-    border-radius: 80%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-}
-
 
 .foto {
     max-width: 300px;

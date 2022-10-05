@@ -2,7 +2,7 @@ import React from 'react';
 import Item from './Item';
 const ItemList = ({ items }) => {
     return (
-        <>
+        <div className='items'>
             {items.map((item) => {
                 return <Item
                     key={item.id}
@@ -14,7 +14,7 @@ const ItemList = ({ items }) => {
                 />
             })
             }
-        </>
+        </div>
     )
 }
 

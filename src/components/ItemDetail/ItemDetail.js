@@ -6,9 +6,11 @@ const ItemDetail = ({ details }) => {
     const [cuenta, setCuenta] = useState(false)
     const { agregarAlCarrito } = useCartContext()
     const onAdd = (cantidad) => {
-        setCuenta(true)
-        agregarAlCarrito(details, cantidad)
-        console.log(`Añadiste ${cantidad} cantidades al carrito`)
+        if (cantidad > 0) {
+            agregarAlCarrito(details, cantidad)
+            setCuenta(true)
+            console.log(`Añadiste ${cantidad} cantidades al carrito`)
+        }
     }
     return (
         <>
@@ -19,8 +21,8 @@ const ItemDetail = ({ details }) => {
                 <p>Medidas: {details.medidas}</p>
                 {
                     cuenta
-                        ? <Link to="/cart">Terminar compra</Link>
-                        : <Cuenta initial={3} stock={5} onAdd={onAdd} />
+                        ? <Link to="/cart">Ir al carrito</Link>
+                        : <Cuenta stock={details.stock} onAdd={onAdd} />
                 }
             </div>
             <Link to={`/`} >
