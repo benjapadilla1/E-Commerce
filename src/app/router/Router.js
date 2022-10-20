@@ -6,8 +6,8 @@ import ItemDetailContainer from '../../components/ItemDetail/ItemDetailContainer
 import { CartProvider } from '../../components/Cart/CartContext';
 import Cart from '../../components/Cart/Cart';
 import Ubicacion from '../../pages/ubicacion';
-import Contacto from '../../pages/contacto';
 import Formulario from '../../components/Formulario/Formulario';
+import Home from '../../pages/Home';
 const Router = () => {
     return (
         <>
@@ -15,11 +15,12 @@ const Router = () => {
                 <BrowserRouter>
                     <Routes >
                         <Route element={<Layout />}>
-                            <Route path="/" index element={<ItemListContainer />} />
+                            <Route path="/" index element={<Home />} />
+                            <Route path="/productos" element={<ItemListContainer />} />
+                            <Route path="/productos/categoria/:categoriaId" element={<ItemListContainer />} />
                             <Route path="/item/:itemId" element={<ItemDetailContainer />} />
                             <Route path="/ubicacion" element={<Ubicacion />} />
                             <Route path="/cart" element={<Cart />} />
-                            <Route path="/contacto" element={<Contacto />} />
                             <Route path='/Formulario' element={<Formulario />}></Route>
                         </Route>
                     </Routes>

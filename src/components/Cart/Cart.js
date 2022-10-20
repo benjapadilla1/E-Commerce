@@ -8,7 +8,7 @@ const Cart = () => {
         return (
             <div className="text-center">
                 <p>"No hay elementos en el carrito"</p>
-                < Link to="/" > Hacer compras</Link>
+                < Link to="/productos" > Hacer compras</Link>
             </div>
         )
     }
@@ -17,9 +17,6 @@ const Cart = () => {
             {
                 carrito.map(producto => <ItemCart key={producto.id} producto={producto} cantidad={producto.cantidad} />)
             }
-            {/* <div className='d-flex justify-content-end'>
-                <button onClick={limpiarCarrito} className="btn btn-warning" >Limpiar Carrito</button>
-            </div> */}
             <h4 className='text-center'>
                 Total de la compra: ${precioTotal()}
             </h4>
@@ -29,7 +26,6 @@ const Cart = () => {
                 </Link>
                 <button onClick={limpiarCarrito} className="btn btn-warning" >Limpiar Carrito</button>
             </div>
-
         </>
     )
 }

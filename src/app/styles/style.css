@@ -1,13 +1,12 @@
-.link {
-    text-decoration: none;
-    color: black;
+* {
+    text-decoration: none !important;
 }
 
 .items {
     display: grid;
     grid-template-columns: repeat(2, auto);
+    gap: 15px;
 }
-
 
 .card {
     display: flex;
@@ -16,22 +15,51 @@
     justify-content: center;
 }
 
-/* Animacion CARD */
+/* Animacion foto producto */
+@-webkit-keyframes cardImg {
+    to {
+        -webkit-transform: scale(0.9);
+        transform: scale(0.9);
+    }
+}
+
+@keyframes cardImg {
+    to {
+        -webkit-transform: scale(0.9);
+        transform: scale(0.9);
+    }
+}
+
 .cardImg {
-    box-sizing: border-box;
-    transition: 400ms;
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
 }
 
-.cardImg:hover {
-    transform: translateY(-30px);
-    transform: translate(-10px, -10px) rotate(-15deg) scale(1.4);
-}
-
-.carrito,
-.necy {
-    max-width: 100px;
+.cardImg:hover,
+.cardImg:focus,
+.cardImg:active {
+    -webkit-animation-name: cardImg;
+    animation-name: cardImg;
+    -webkit-animation-duration: 0.3s;
+    animation-duration: 0.3s;
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    -webkit-animation-direction: alternate;
+    animation-direction: alternate;
 }
 
 .foto {
     max-width: 300px;
+}
+
+/* Home css */
+
+.quienesSomos {
+    font-size: 22px;
+    text-align: center;
 }

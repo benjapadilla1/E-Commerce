@@ -6,16 +6,14 @@ import "./NavBar.css"
 const NavBar = () => {
     return (
         <div className="NavBar">
-            <img className="necy" src={foto} alt="" />
-            <ul>
-            </ul>
-            <NavLink to="/Contacto">Contacto</NavLink>
-            <NavLink to="/" className="link"><h1>Necy</h1></NavLink>
-            <ul>
-                <NavLink to="/ubicacion" >Donde estamos </NavLink>
-            </ul>
+            <NavLink to="/">
+                <img className="necyFoto" src={foto} alt="" />
+            </NavLink>
+            <NavLink to="/productos" className="NavBarAnchor">Productos</NavLink>
+            <NavLink to="/" className="Necyh1"><h1>Necy</h1></NavLink>
+            <NavLink to="/ubicacion" className="NavBarAnchor">Donde estamos </NavLink>
             <NavLink to={"/cart"}>
-                <img className="carrito" src={fotocarrito} alt="" />
+                <img className="carritoFoto" src={fotocarrito} alt="" />
                 <div className="contador">
                     <CartWidget />
                 </div>

@@ -1,12 +1,15 @@
 .NavBar {
     margin: 27px auto 0;
-    position: relative;
-    width: 590px auto;
-    border-radius: 8px;
+    width: 100% auto;
     display: flex;
     justify-content: space-around;
 }
 
+.NavBarAnchor {
+    color: black !important;
+    text-decoration: none !important;
+    font-size: 25px;
+}
 
 .contador {
     color: black;
@@ -58,4 +61,17 @@
     animation-iteration-count: infinite;
     -webkit-animation-direction: alternate;
     animation-direction: alternate;
+}
+
+.necyFoto {
+    max-width: 100px;
+}
+
+.Necyh1 {
+    text-decoration: none;
+    color: black;
+}
+
+.carritoFoto {
+    max-width: 60px;
 }

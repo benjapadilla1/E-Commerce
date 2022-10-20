@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import Cuenta from "../ItemCount"
+import Cuenta from "../ItemCount/ItemCount"
 import { Link } from 'react-router-dom'
 import { useCartContext } from '../Cart/CartContext'
 const ItemDetail = ({ details }) => {
@@ -25,7 +25,7 @@ const ItemDetail = ({ details }) => {
                         : <Cuenta stock={details.stock} onAdd={onAdd} />
                 }
             </div>
-            <Link to={`/`} >
+            <Link to={`/productos`} >
                 <button className="btn btn-dark">
                     Volver
                 </button>

@@ -1,0 +1,11 @@
+.footer {
+    width: 100%;
+    height: auto;
+    background-color: #95bfa8;
+    text-decoration: none;
+}
+
+.footerText {
+    display: flex;
+    justify-content: flex-end;
+}
