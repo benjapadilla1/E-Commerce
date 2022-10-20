@@ -1,4 +1,9 @@
 Necy 
+
+
+https://user-images.githubusercontent.com/104010099/196844636-d68d56c8-8e48-4c6a-8e06-6459d1a07d67.mp4
+
+
 Necy es un emprendimiento dedicado al comercio del rubro de marroquineria, textil y la linea de viaje
 Este proyecto usa react-bootstrap
 # Getting Started with Create React App
